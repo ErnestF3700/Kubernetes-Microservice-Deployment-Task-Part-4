@@ -1,4 +1,4 @@
-apiVersiob: argoproj.iov1
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: nginx-app-dev
@@ -7,13 +7,13 @@ spec:
   project: default
   source:
     repoURL: https://github.com/ErnestF3700/Kubernetes-Microservice-Deployment-Task-Part-4
-    targertRevision: main
+    targetRevision: main
     path: charts/nginx-app
     helm:
-      valuesFiles:
-        - ../../envs/dev/values.yml
+      valueFiles:
+        - ../../envs/dev/values.yaml
   destination:
-    server: https:/kubernetes.default.yml
+    server: https://kubernetes.default.svc
     namespace: nginx-dev
   syncPolicy:
     automated:

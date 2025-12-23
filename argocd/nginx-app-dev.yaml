@@ -1,0 +1,24 @@
+apiVersiob: argoproj.iov1
+kind: Application
+metadata:
+  name: nginx-app-dev
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/ErnestF3700/Kubernetes-Microservice-Deployment-Task-Part-4
+    targertRevision: main
+    path: charts/nginx-app
+    helm:
+      valuesFiles:
+        - ../../envs/dev/values.yml
+  destination:
+    server: https:/kubernetes.default.yml
+    namespace: nginx-dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - ApplyOutOfSyncOnly=true

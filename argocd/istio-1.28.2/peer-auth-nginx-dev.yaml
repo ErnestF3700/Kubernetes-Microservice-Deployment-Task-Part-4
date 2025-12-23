@@ -2,7 +2,7 @@ apiVersion: security.istio.io/v1beta1
 kind: PeerAuthentication
 metadata:
   name: default
-  namespace: nginx-dev
+  namespace: nginx-app
 spec:
   mtls:
     mode: STRICT

@@ -1,0 +1,5 @@
+argoCD działa w deploymencie aplikacji, repozytorium stanowi jedyne źródło prawdy o stanie wdrożenia,cale info o klastrze jest w repo, latwość rollbacków,, argoCD stale
+monitoruje kalster u automatycznie go synchronizuje,
+mLTS- szyfruje i zabezpiecza komunikacje miedzy podami,
+Nie należy używać argo gdy środowiska są małe
+Mlts i service mesh nie używamy gdy małych klastrach i gdy jest niska złożoność architrektury,
